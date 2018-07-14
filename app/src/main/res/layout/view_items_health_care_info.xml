@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_medium_2"
+    android:layout_marginRight="@dimen/margin_medium_2"
+    android:layout_marginTop="@dimen/margin_medium_2">
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvHealthCareTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="[MIUI Lucky Friday #93] Which Year Did You Get Your First Mi Phone? Win Amazfit Cor Band And More!"
+        android:textSize="@dimen/text_regular_3x" />
+
+    <ImageView
+        android:id="@+id/ivHealthCareImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_placeholder"
+        android:layout_below="@id/tvHealthCareTitle"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:scaleType="centerCrop"
+        android:src="@drawable/image_item" />
+
+    <TextView
+        android:id="@+id/tvInfoType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivHealthCareImage"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@drawable/edittext_background"
+        android:text="Hot"
+        android:textSize="@dimen/text_small" />
+
+    <org.mmtextview.components.MMTextView
+        android:id="@+id/tvAuthorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivHealthCareImage"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_toRightOf="@id/tvInfoType"
+        android:text="Sujayb"
+        android:textSize="@dimen/text_small" />
+
+    <TextView
+        android:id="@+id/tvSeen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivHealthCareImage"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_toRightOf="@id/tvAuthorName"
+        android:drawableLeft="@drawable/icon_see"
+        android:drawablePadding="@dimen/margin_small"
+        android:text="17764"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/text_small" />
+
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivHealthCareImage"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_toRightOf="@id/tvSeen"
+        android:drawableLeft="@drawable/icon_message"
+        android:drawablePadding="@dimen/margin_small"
+        android:text="2278"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/text_small" />
+
+    <TextView
+        android:id="@+id/tvLike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivHealthCareImage"
+        android:layout_marginLeft="@dimen/margin_medium"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_toRightOf="@id/tvMessage"
+        android:drawableLeft="@drawable/icon_like"
+        android:text="137"
+        android:textColor="@color/secondary_text"
+        android:textSize="@dimen/text_small" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_below="@id/tvInfoType"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@color/border_color" />
+</RelativeLayout>
