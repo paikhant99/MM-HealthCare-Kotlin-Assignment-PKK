@@ -1,5 +1,6 @@
 package com.padcmyanmar.mm_healthcare_kotlin_assignment_pkk.data.models
 
+import com.padcmyanmar.mm_healthcare_kotlin_assignment_pkk.data.vos.HealthCareInfoVO
 import com.padcmyanmar.mm_healthcare_kotlin_assignment_pkk.events.DataEvent
 import com.padcmyanmar.mm_healthcare_kotlin_assignment_pkk.network.HealthCareDataAgent
 import org.greenrobot.eventbus.EventBus
@@ -22,6 +23,8 @@ class HealthCareModel {
         }
     }
 
+    private var healthCareInfosMap: HashMap<Long, HealthCareInfoVO> = HashMap()
+
     private constructor(){
         EventBus.getDefault().register(this)
     }
@@ -34,5 +37,8 @@ class HealthCareModel {
     @Subscribe(threadMode = ThreadMode.BACKGROUND)
     fun onHealthCareInfosLoadedEvent(healthCareInfosLoadedEvent: DataEvent.HealthCareInfosLoadedEvent){
 
+        for(healthCareInfo: HealthCareInfoVO in healthCareInfosLoadedEvent.mHealthCareInfos){
+            healthCareInfosMap.put(healthCareInfo.id,healthCareInfo);
+        }
     }
 }

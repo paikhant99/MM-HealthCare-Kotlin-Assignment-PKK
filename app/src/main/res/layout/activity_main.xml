@@ -72,153 +72,160 @@
             android:layout_height="match_parent" />
     </android.support.design.widget.AppBarLayout>
 
-    <ScrollView
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        <RelativeLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <EditText
-                android:id="@+id/tvSearchMiuiNews"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_medium_2"
-                android:layout_marginRight="@dimen/margin_medium_2"
-                android:layout_marginTop="@dimen/margin_medium"
-                android:background="@drawable/edittext_background"
-                android:drawableLeft="@drawable/ic_search_grey_24dp"
-                android:hint="Search for MIUI updates,review apps ..."
-                android:textSize="@dimen/text_small"
-                android:focusedByDefault="false"/>
+                android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/ivPlaceholder"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/image_placeholder"
-                android:layout_below="@id/tvSearchMiuiNews"
-                android:layout_marginTop="@dimen/margin_medium"
-                android:src="@drawable/image_placeholder"
-                android:scaleType="centerCrop"/>
-
-            <LinearLayout
-                android:id="@+id/layout_btns"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/ivPlaceholder"
-                android:orientation="horizontal"
-                android:padding="@dimen/margin_medium"
-                android:weightSum="4">
-
-                <RelativeLayout
-                    android:id="@+id/btnSubforums"
-                    android:layout_width="0dp"
+                <EditText
+                    android:id="@+id/tvSearchMiuiNews"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:layout_marginLeft="@dimen/margin_medium_2"
+                    android:layout_marginRight="@dimen/margin_medium_2"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:background="@drawable/edittext_background"
+                    android:drawableLeft="@drawable/ic_search_grey_24dp"
+                    android:hint="Search for MIUI updates,review apps ..."
+                    android:textSize="@dimen/text_small"
+                    android:focusedByDefault="false"/>
 
-                    <ImageView
-                        android:id="@+id/iv_subforums"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/icon_subforums" />
+                <ImageView
+                    android:id="@+id/ivPlaceholder"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/image_placeholder"
+                    android:layout_below="@id/tvSearchMiuiNews"
+                    android:layout_marginTop="@dimen/margin_medium"
+                    android:src="@drawable/image_placeholder"
+                    android:scaleType="centerCrop"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/iv_subforums"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="@dimen/margin_medium"
-                        android:text="Subforums"
-                        android:textColor="@color/secondary_text" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/btnRecruitments"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:id="@+id/layout_btns"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/ivPlaceholder"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_medium"
+                    android:weightSum="4">
 
-                    <ImageView
-                        android:id="@+id/iv_recruitments"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/icon_recruitments" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <RelativeLayout
+                        android:id="@+id/btnSubforums"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/iv_recruitments"
-                        android:layout_centerHorizontal="true"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="@dimen/margin_medium"
-                        android:text="Recruitments"
-                        android:textColor="@color/secondary_text" />
-                </RelativeLayout>
+                        android:layout_weight="1">
 
-                <RelativeLayout
-                    android:id="@+id/btnMIUI10"
-                    android:layout_width="0dp"
+                        <ImageView
+                            android:id="@+id/iv_subforums"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/icon_subforums" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/iv_subforums"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:text="Subforums"
+                            android:textColor="@color/secondary_text" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btnRecruitments"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/iv_recruitments"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/icon_recruitments" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/iv_recruitments"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:text="Recruitments"
+                            android:textColor="@color/secondary_text" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btnMIUI10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/iv_miui10"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/icon_miui10" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/iv_miui10"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:text="MIUI10"
+                            android:textColor="@color/secondary_text" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/btnTheme"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/iv_themes"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/icon_themes"
+                            android:layout_centerHorizontal="true"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Themes"
+                            android:layout_below="@id/iv_themes"
+                            android:layout_marginTop="@dimen/margin_medium"
+                            android:textColor="@color/secondary_text"
+                            android:layout_centerHorizontal="true"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvHealthCareInfos"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                    android:layout_below="@id/layout_btns"
+                    android:layout_marginTop="@dimen/margin_medium"/>
+            </RelativeLayout>
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 
-                    <ImageView
-                        android:id="@+id/iv_miui10"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/icon_miui10" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/iv_miui10"
-                        android:layout_centerHorizontal="true"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="@dimen/margin_medium"
-                        android:text="MIUI10"
-                        android:textColor="@color/secondary_text" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/btnTheme"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:id="@+id/iv_themes"
-                        android:layout_width="32dp"
-                        android:layout_height="32dp"
-                        android:src="@drawable/icon_themes"
-                        android:layout_centerHorizontal="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Themes"
-                        android:layout_below="@id/iv_themes"
-                        android:layout_marginTop="@dimen/margin_medium"
-                        android:textColor="@color/secondary_text"
-                        android:layout_centerHorizontal="true"/>
-                </RelativeLayout>
-
-            </LinearLayout>
-
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rvHealthCareInfos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/layout_btns"
-                android:layout_marginTop="@dimen/margin_medium"/>
-        </RelativeLayout>
-    </ScrollView>
 
 </android.support.design.widget.CoordinatorLayout>
